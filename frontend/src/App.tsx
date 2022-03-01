@@ -38,7 +38,7 @@ const App = () => {
           <FileUpload onFileChange={handleFileUpload} />
         </CardHeader>
         <CardContent>
-          <TextArea id="result" label="Result:" rows={10} value={result} />
+          <TextArea id="result" label="Result:" rows={10} value={result} readOnly />
         </CardContent>
       </Card>
     </Layout>
