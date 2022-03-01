@@ -6,6 +6,7 @@ import (
 	"io"
 	"net/http"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	peparser "github.com/saferwall/pe"
 )
@@ -41,6 +42,12 @@ func upload(c *gin.Context) {
 
 func main() {
 	r := gin.Default()
+	r.Use(cors.New(cors.Config{
+		AllowOrigins: []string{"*"},
+		AllowMethods: []string{"POST"},
+		AllowHeaders: []string{"Content-Type, access-control-allow-origin, access-control-allow-headers"},
+	}))
+
 	r.POST("/upload", upload)
 	r.Run("0.0.0.0:8080")
 }
