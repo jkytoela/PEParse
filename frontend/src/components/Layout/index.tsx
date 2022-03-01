@@ -7,7 +7,7 @@ interface ILayout {
 
 const Layout = ({ children }: ILayout) => (
   <div className={tw`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8`}>
-    <div className={tw`max-w-xl mx-auto`}>
+    <div className={tw`max-w-xl mx-auto p-6`}>
       {children}
     </div>
   </div>
